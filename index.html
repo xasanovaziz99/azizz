@@ -1,0 +1,49 @@
+	<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
+		body {
+			display: flex;
+			gap: 10px;
+		}
+		.dih {
+			width: 300px;   
+			height: 300px;  
+			object-fit: cover; 
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+
+	<audio src="crz1.mp3" id="nsnd1"></audio>
+	<img src="before1.jpeg" class="dih" id="dih1">
+
+	<audio src="crz2.mp3" id="nsnd2"></audio>
+	<img src="before2.png" class="dih" id="dih2">
+
+	<audio src="crz3.mp3" id="nsnd3"></audio>
+	<img src="before3.jpg" class="dih" id="dih3">
+
+	<script>
+		const items = [
+			{ img: dih1, snd: nsnd1, after: "after1.webp" },
+			{ img: dih2, snd: nsnd2, after: "after2.jpg" },
+			{ img: dih3, snd: nsnd3, after: "after3.jpg" }
+		];
+
+		items.forEach(item => {
+			item.img.onclick = function(){
+				item.img.src = item.after;
+				item.snd.currentTime = 0;
+				item.snd.play();
+			};
+		});
+	</script>
+
+</body>
+</html>
+
